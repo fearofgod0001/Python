@@ -49,3 +49,30 @@ for i in range(n) :
 n = int(input())
 for i in range(n, 0-1 ,-1) :
     print(f"값 : {i}")
+
+#for문으로 알파벳 출력 하기
+#chr : 유니코드 값을 입력 받아 코드에 해당하는 문자를 출력
+# ord : 문자의 유니코드 값을 돌려준는 함수
+for i in range(ord("A"), ord("Z")+1) :
+    print(chr(i), end=" ")
+
+for i in range(65,90+1) :
+    print(chr(i), end=" ")
+
+
+#학점 구하기 : 성적을 입력 받아 학점 출력 하기 (반복문 사용, 음수가 입력 되면 종료, 100보다 크면 재 입력 요구)
+while True :
+    score = int(input("점수 입력 : "))
+    # 종료 조건
+    if score < 0 : break
+    # 재 입력 요구 조건
+    if score > 100 :
+        print("점수를 잘 못 입력 하셨습니다.")
+        continue
+    if score >= 90 : grade ="A"
+    elif score >= 80 : grade = "B"
+    elif score >= 70 : grade = "C"
+    elif score >= 60 : grade = "D"
+    else : grade = "F"
+
+    print(f"{score}에 대한 학점은 \"{grade}\" 입니다.")
