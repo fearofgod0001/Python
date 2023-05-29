@@ -58,5 +58,29 @@ print(list_all)
 list_all.clear()
 print(list_all)
 
+# 중복 제거
+my_list=["A","D","B","C","C","D","E","F"]
+new_list=[]
+for e in my_list : #my_list 리스트를 요소값 기준으로 자동 순회
+    if e not in new_list :
+        new_list.append(e)
+print(new_list)
 
+# 정렬
+arr = [1,4,5,66,777,1000,234,456,56,678]
+print(arr)
+arr.sort()
+print(arr)
+arr.sort(reverse=True)
+print(arr)
+
+#리스트의 모든 요소 스캔
+name_x=["이태석1","이태석2","이태석3","이태석4"]
+# java의 향상된 for문 과 같이 리스트의 요소를 자동 순회
+for e in name_x :
+    print(e,end=" ")
+
+# 리스트의 개수를 구해서 인덱스로 순회
+for i in range(len(name_x)) :
+    print(name_x[i],end=" ")
 
