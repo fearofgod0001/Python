@@ -15,3 +15,9 @@ print(f"평균  : {tot/3}")
 score = list(map(int, input("성적 입력 : ").split()))
 print(f"평균 : {sum(score)/len(score)}")
 
+print(mixed[1:3])
+
+s = ["korea","seoul","inchun",[1,2,3,4,5],["한국","일본","중국"]]
+print(s[0][1])
+print(s[4][0][0], s[4][1][0], s[4][2][0])
+
