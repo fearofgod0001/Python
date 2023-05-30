@@ -66,3 +66,16 @@ game(player,knife)
 
 # 람다와 함수
 # 람다란? 간단한 함수의 선언과 호출을 하나의 식으로 간략히 표현, 이름 없는 함수를 의미
+def add(a,b) : 
+    return a+b
+print(add(10,20))
+# 아래와 같다
+print((lambda a,b : a+b)(10,20))
+
+def power(n):
+    return n*n
+
+square = lambda x : x * x # 람다식으로 익명의 함수 만들기
+input = [1,2,3,4,5,6,7,8,9]
+output = list(map(square, input))
+print(output)
