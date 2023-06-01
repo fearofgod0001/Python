@@ -2,6 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 from flask import Flask
 
+# 설치 방법
+# set FLASK_APP=파일이름.py
+# flask run
+
+
 app = Flask(__name__)
 @app.route("/")
 
