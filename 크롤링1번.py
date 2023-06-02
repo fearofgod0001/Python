@@ -11,17 +11,17 @@ app = Flask(__name__) #__name__은 현재 모듈 이름을 의미
 @app.route()
 
 #오류
-url ="https://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108"
+# url ="https://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108"
 
-#HTTP Get요청
-response = requests.get(url).text
-#HTML 파싱
-soup = BeautifulSoup(response,"html.parser")
-# print(soup)
+# #HTTP Get요청
+# response = requests.get(url).text
+# #HTML 파싱
+# soup = BeautifulSoup(response,"html.parser")
+# # print(soup)
 
-for loc in soup.select("location") :
-    print("도시 : ",loc.select_one("city").string)
-    print("날씨 : ",loc.select_one("wf").string)
-    print("최저기온 : ",loc.select_one("tmn").string)
-    print("최고기온 : ",loc.select_one("tmx").string)
-    print("-"*25)
+# for loc in soup.select("location") :
+#     print("도시 : ",loc.select_one("city").string)
+#     print("날씨 : ",loc.select_one("wf").string)
+#     print("최저기온 : ",loc.select_one("tmn").string)
+#     print("최고기온 : ",loc.select_one("tmx").string)
+#     print("-"*25)
