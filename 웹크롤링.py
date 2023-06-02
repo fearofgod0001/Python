@@ -51,3 +51,19 @@ print(len(res.text))
 
 with open("naver.html","w", encoding="utf8") as fd :
      fd.write(res.text)
+
+soup = BeautifulSoup(res.text, "lxml")
+# 객체에서 원하는 조건에 맞는 첫 번째 요소를 찾을 수 있음(클래스가  "menu_area")인 요소를 찾습니다
+print(soup.find(attrs={"class" : "menu_area"}))
+
+#CSS 선택자로 요소를 검색
+print(soup.select('div.atcmp_footer'))
+
+#속성으로 요소 검색
+print(soup.find_all('a',href=True))
+# for val in a_tag :
+#      print(val.text)
+
+#id로 검색하기
+print(soup.select_one("#topAsideArea"))
+
