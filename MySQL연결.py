@@ -1,6 +1,11 @@
 import pymysql
 #pip install pymysql 터미널에 실행 필수!!!
 
+# 전역 변수
+conn, cur = None, None
+data1,data2, data3, data4 = "", "", "", ""
+sql = ""
+
 #MYySQL연결
 conn = pymysql.connect(host="127.0.0.1", user="root", password="TIGER", db="mysqlDB", charset="utf8")
 
@@ -8,12 +13,21 @@ conn = pymysql.connect(host="127.0.0.1", user="root", password="TIGER", db="mysq
 cur = conn.cursor()
 
 # 테이블 생성
-cur.execute("CREATE TABLE userTable (id char(10), userName char(15), email char(20), birthYear int)")
+# cur.execute("CREATE TABLE userTable (id char(10), userName char(15), email char(20), birthYear int)")
 
 # 데이터 입력 하기
-cur.execute("INSERT INTO userTable VALUES('ayj', '안유진', 'ayj@gmail.com', 2003)")
-cur.execute("INSERT INTO userTable VALUES('jwy', '장원영', 'jwy@gmail.com', 2004)")
+# cur.execute("INSERT INTO userTable VALUES('ayj', '안유진', 'ayj@gmail.com', 2003)")
+# cur.execute("INSERT INTO userTable VALUES('jwy', '장원영', 'jwy@gmail.com', 2004)")
 
+while True :
+    data1 = input("아이디 : ")
+    if data1 == "" : break    
+    data2 = input("이름 : ")  
+    data3 = input("이메일 : ")  
+    data4 = input("출생년도 : ")  
+    sql = "INSERT INTO userTable VALUES('" + data1 + "', '" + data2 + "', '" + data3 + "', '" + data4 + "')"
+    cur.execute(sql)
+    
 # 데이터 저장하기
 conn.commit()
 
