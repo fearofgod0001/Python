@@ -46,7 +46,7 @@ print(result)
 
 #requests : 파이썬에서 HTTP 요청과 응답을 제공
 import requests
-res = requests.get("http://naver.com")
+res = requests.get("https://www.iei.or.kr/intro/teacher.kh")
 print(len(res.text))
 
 with open("naver.html","w", encoding="utf8") as fd :
